@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="http://localhost:8084/StudentReg/LoginServlet" method="post" name="login" onsubmit="return formCheck()">
+            ID: <input type="text" name="id"><br>
+            Password: <input type="text" name="pw"><br>
+            <input type="submit" value="Login">
+            <input type="reset" value="Clear">
+        </form>
+        <script>
+            function formCheck(){
+                var c, p;
+                c = document.forms["login"]["id"].value;
+                p = document.forms["login"]["pw"].value;
+                
+                if (c == "admin"){
+                    return true;
+                }
+                
+                if (c == null || c == "" || p == null || p == ""){
+                    alert("Must enter a valid ID and Password");
+                    return false; 
+                }
+                
+                if (c != int){
+                    alert("All ID's are whole numbers");
+                    return false;
+                }
+            }
+        </script>
+    </body>
+</html>
